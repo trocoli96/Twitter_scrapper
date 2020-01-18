@@ -1,7 +1,10 @@
 import React, {useEffect, useState} from 'react';
+import './App.css';
 
 
 function Tweets(){
+
+
 
     const [tweetsData, setTweetsData] = useState([]);
     const [error, setError] = useState([]);
@@ -11,6 +14,10 @@ function Tweets(){
             const url = 'http://localhost:8080/api/tweets';
             const options = {
                 method: 'GET',
+                header: new Headers({
+                    Accept: 'application/json',
+                    'Content-Type': 'application/json',
+                }),
                 mode: 'cors',
             };
 
@@ -35,13 +42,24 @@ function Tweets(){
     },[]);
 
     return (
-    <div>
-    {tweetsData.data && tweetsData.data.map((data) => (
-        <h3>{data.username}</h3>
-
-    ))}
-
-    </div>
+    <div className="page">
+        {tweetsData.data && tweetsData.data.map((data) => (
+                    <div className="box">
+                        <div className="userinfo">
+                            <div>
+                                {data.emoji}
+                            </div>
+                            <span>
+                                        <h3>{data._doc.username}</h3>
+                                        <p>Sentiment: {data.sentiment}</p>
+                                    </span>
+                        </div>
+                        <div className="text">
+                        <p>{data._doc.body}</p>
+                        </div>
+                    </div>
+                ))}
+            </div>
     );
 
 }

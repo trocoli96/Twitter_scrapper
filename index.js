@@ -1,5 +1,6 @@
 // FileName: index.js
 // Import express
+var cors = require('cors');
 let express = require('express');
 // Initialize the app
 let app = express();
@@ -17,8 +18,8 @@ app.listen(port, function () {
 // Import routes
 let apiRoutes = require("./api-routes");
 // Use Api routes in the App
+app.use(cors());
 app.use('/api', apiRoutes);
-
 // Import Body parser
 let bodyParser = require('body-parser');
 // Import Mongoose
