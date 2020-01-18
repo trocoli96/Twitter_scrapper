@@ -1,0 +1,32 @@
+{
+  "name": "nf1_scrapper",
+  "version": "1.0.0",
+  "description": "Second hackaton - Scrapping project",
+  "main": "index.js",
+  "author": "alfonso",
+  "license": "ISC",
+  "dependencies": {
+    "axios": "^0.19.0",
+    "cheerio": "^1.0.0-rc.3",
+    "express": "^4.17.1",
+    "mongodb": "^3.4.1",
+    "puppeteer": "^2.0.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/eaarranz/nf1_scrapper.git"
+  },
+  "keywords": [
+    "a",
+    "api",
+    "restful",
+    "json"
+  ],
+  "bugs": {
+    "url": "https://github.com/eaarranz/nf1_scrapper/issues"
+  },
+  "homepage": "https://github.com/eaarranz/nf1_scrapper#readme"
+}
