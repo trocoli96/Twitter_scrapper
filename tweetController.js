@@ -13,7 +13,7 @@ exports.index = function (req, res) {
         res.json({
             status: "success",
             message: "Tweet retrieved successfully",
-            data: tweets
+            data: addSentiment(tweets)
         });
 
     });
@@ -30,3 +30,25 @@ exports.view = function (req, res) {
         });
     });
 };
+
+var ml = require("ml-sentiment")();
+
+function addSentiment(tweets) {
+    var tweetsWithSetniment = tweets.map((tweet) => {
+        const sentiment = ml.classify(tweet.body);
+        let emoji = "😕";
+        if (sentiment >= 5) {
+            emoji = "😃";
+        } else if (sentiment > 0) {
+            emoji = "🙂";
+        } else if (sentiment == 0) {
+            emoji = "😐";
+        }
+        return {
+            ...tweet,
+            emoji,
+            sentiment
+        };
+    });
+    return tweetsWithSetniment;
+}
