@@ -30,3 +30,5 @@ app.use(bodyParser.json());
 // Deprecated: mongoose.connect('mongodb://localhost/resthub');
 mongoose.connect('mongodb://localhost/data', { useNewUrlParser: true});
 var db = mongoose.connection;
+
+
