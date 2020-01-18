@@ -8,5 +8,13 @@ router.get('/', function (req, res) {
         message: 'Welcome to RESTHub crafted with love!'
     });
 });
+
+// Import contact controller
+var tweetController = require('./tweetController');
+
+// Contact routes
+router.route('/tweets')
+    .get(tweetController.index);
+
 // Export API routes
 module.exports = router;
