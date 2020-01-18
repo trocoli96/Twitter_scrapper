@@ -1,9 +1,9 @@
 // contactController.js
 // Import contact model
-Contact = require('./tweetModel');
+Tweet = require('./tweetModel');
 // Handle index actions
 exports.index = function (req, res) {
-    Contact.get(function (err, contacts) {
+    Tweet.get(function (err, tweets) {
         if (err) {
             res.json({
                 status: "error",
@@ -15,12 +15,13 @@ exports.index = function (req, res) {
             message: "Tweet retrieved successfully",
             data: tweets
         });
+
     });
 };
 
 // Handle view contact info
 exports.view = function (req, res) {
-    tweets.findById(req.params.tweets_id, function (err, contact) {
+    tweets.findById(req.params.tweets_id, function (err, tweets) {
         if (err)
             res.send(err);
         res.json({

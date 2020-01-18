@@ -28,5 +28,5 @@ app.use(bodyParser.urlencoded({
 app.use(bodyParser.json());
 // Connect to Mongoose and set connection variable
 // Deprecated: mongoose.connect('mongodb://localhost/resthub');
-mongoose.connect('mongodb://localhost/resthub', { useNewUrlParser: true});
+mongoose.connect('mongodb://localhost/data', { useNewUrlParser: true});
 var db = mongoose.connection;
