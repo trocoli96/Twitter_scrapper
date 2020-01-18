@@ -11,9 +11,12 @@
     "cheerio": "^1.0.0-rc.3",
     "cors": "^2.8.5",
     "express": "^4.17.1",
+    "ml-sentiment": "^2.0.7",
     "mongodb": "^3.4.1",
     "mongoose": "^5.8.9",
-    "puppeteer": "^2.0.0"
+    "puppeteer": "^2.0.0",
+    "sentiment": "^5.0.2",
+    "twitter": "^1.7.1"
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
